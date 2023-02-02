@@ -17,7 +17,7 @@ const Accordion = (props) => {
   return (
     <Provider value={value}>
       <div className="accordion">
-        <AccordionTitle title={title} expand={expand} toggle={toggle} />
+        <AccordionTitle title={title}/>
         <AcordionContent content={content} expand={expand} />
       </div>
     </Provider>
