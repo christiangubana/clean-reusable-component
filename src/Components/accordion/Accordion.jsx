@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
+import useToggle from '../../hooks/useToggle';
 
 const Accordion = () => {
- const [expand, setExpand] = useState(false)
- const toggle = () => setExpand(prevExpand => !prevExpand);
- 
+ const { status: expand, toggleStatus: toggleStatus} = useToggle()
+
   return (
     <div className='accordion'>
-      <button onClick={toggle}>Toggle <span>{expand ? '-' : '+'}</span></button>
+      <button className='event' onClick={toggleStatus}>Toggle <span>{expand ?'-' : '+'}</span></button>
       {expand && <p className='content'>showing content!</p>}
     </div>
   )
