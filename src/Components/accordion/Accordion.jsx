@@ -1,14 +1,31 @@
-import useToggle from '../../hooks/useToggle';
+import useToggle from "../../hooks/useToggle";
 
-const Accordion = () => {
- const { status: expand, toggleStatus: toggle} = useToggle()
+const Accordion = (props) => {
+  const { title, content } = props;
+  const { status: expand, toggleStatus: toggle } = useToggle();
 
   return (
-    <div className='accordion'>
-      <button className='event' onClick={toggle}>Toggle <span>{expand ?'-' : '+'}</span></button>
-      {expand && <p className='content'>showing content!</p>}
+    <div className="accordion">
+      <AccordionTitle title={title} expand={expand} toggle={toggle} />
+      <AcordionContent content={content} expand={expand} />
     </div>
-  )
-}
+  );
+};
+
+const AccordionTitle = (props) => {
+  const { title, expand, toggle } = props;
+  return (
+    <>
+      <button className="event" onClick={toggle}>
+        {title} <span>{expand ? "-" : "+"}</span>
+      </button>
+    </>
+  );
+};
+
+const AcordionContent = (props) => {
+  const { expand, content } = props;
+  return <>{expand && <div className="content">{content}</div>}</>;
+};
 
 export default Accordion;

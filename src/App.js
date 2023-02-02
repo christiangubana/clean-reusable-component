@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <h1>Learning React!</h1>
-      <Accordion/>  
+      <Accordion title='Product Info' content='This is a product content'/>  
       <br/>
       <Editable/>      
     </div>
