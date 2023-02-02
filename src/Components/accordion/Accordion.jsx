@@ -18,7 +18,7 @@ const Accordion = (props) => {
     <Provider value={value}>
       <div className="accordion">
         <AccordionTitle title={title}/>
-        <AcordionContent content={content} expand={expand} />
+        <AcordionContent content={content}/>
       </div>
     </Provider>
   );
