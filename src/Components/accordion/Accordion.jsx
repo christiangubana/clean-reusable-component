@@ -37,7 +37,8 @@ const AccordionTitle = (props) => {
 };
 
 const AcordionContent = (props) => {
-  const { expand, content } = props;
+  const { content } = props;
+  const {expand} = useContext(AccordionContext)
   return <>{expand && <div className="content">{content}</div>}</>;
 };
 
